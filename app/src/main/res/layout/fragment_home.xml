@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/home"
+        android:padding="12dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/image_logout"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_exit"
+        android:contentDescription="@string/home"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_home"
+        app:layout_constraintBottom_toBottomOf="@id/text_home"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/text_home"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:layout_margin="6dp"
+                android:id="@+id/slideViewPager2"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/text_category_item_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="@string/category"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintTop_toBottomOf="@id/slideViewPager2"
+                app:layout_constraintBottom_toTopOf="@id/recycler_view_category_one"/>
+
+            <TextView
+                android:id="@+id/text_category_item_view_one"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="@string/view_all"
+                android:gravity="center"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/add_product_icon_background"
+                app:layout_constraintEnd_toEndOf="@id/text_category_item_one"
+                app:layout_constraintTop_toTopOf="@id/text_category_item_one"
+                app:layout_constraintBottom_toBottomOf="@id/text_category_item_one"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_category_one"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/text_category_item_one"
+                app:layout_constraintBottom_toTopOf="@id/text_category_item_two"/>
+
+            <TextView
+                android:id="@+id/text_category_item_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="@string/category"
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view_category_one"
+                app:layout_constraintBottom_toTopOf="@id/recycler_view_category_two"/>
+
+            <TextView
+                android:id="@+id/text_category_item_view_two"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="@string/view_all"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginEnd="10dp"
+                android:visibility="gone"
+                android:background="@drawable/add_product_icon_background"
+                app:layout_constraintEnd_toEndOf="@id/text_category_item_two"
+                app:layout_constraintTop_toTopOf="@id/text_category_item_two"
+                app:layout_constraintBottom_toBottomOf="@id/text_category_item_two"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_category_two"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/text_category_item_two"
+                app:layout_constraintBottom_toTopOf="@id/text_category_item_three"/>
+
+            <TextView
+                android:id="@+id/text_category_item_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="@string/category"
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view_category_two"
+                app:layout_constraintBottom_toTopOf="@id/recycler_view_category_three"/>
+
+            <TextView
+                android:id="@+id/text_category_item_view_three"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="@string/view_all"
+                android:gravity="center"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/add_product_icon_background"
+                app:layout_constraintEnd_toEndOf="@id/text_category_item_three"
+                app:layout_constraintTop_toTopOf="@id/text_category_item_three"
+                app:layout_constraintBottom_toBottomOf="@id/text_category_item_three"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_category_three"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/text_category_item_three"
+                app:layout_constraintBottom_toTopOf="@id/text_category_item_four"/>
+
+            <TextView
+                android:id="@+id/text_category_item_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="@string/category"
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view_category_three"
+                app:layout_constraintBottom_toTopOf="@id/recycler_view_category_four"/>
+
+            <TextView
+                android:id="@+id/text_category_item_view_four"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="@string/view_all"
+                android:gravity="center"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/add_product_icon_background"
+                app:layout_constraintEnd_toEndOf="@id/text_category_item_four"
+                app:layout_constraintTop_toTopOf="@id/text_category_item_four"
+                app:layout_constraintBottom_toBottomOf="@id/text_category_item_four"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_category_four"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/text_category_item_four"
+                app:layout_constraintBottom_toTopOf="@id/text_category_item_five"/>
+
+
+            <TextView
+                android:id="@+id/text_category_item_five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="@string/category"
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view_category_four"
+                app:layout_constraintBottom_toTopOf="@id/recycler_view_category_five"/>
+
+            <TextView
+                android:id="@+id/text_category_item_view_five"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="@string/view_all"
+                android:gravity="center"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/add_product_icon_background"
+                app:layout_constraintEnd_toEndOf="@id/text_category_item_five"
+                app:layout_constraintTop_toTopOf="@id/text_category_item_five"
+                app:layout_constraintBottom_toBottomOf="@id/text_category_item_five"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_category_five"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/text_category_item_view_five"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

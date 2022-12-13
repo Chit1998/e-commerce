@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginOptionsActivity">
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_tour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintTop_toBottomOf="@id/image_logo"
+        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:gravity="center"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/edit_background"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintEnd_toEndOf="@id/emailAddress"
+        app:layout_constraintTop_toBottomOf="@id/text_tour"
+        app:layout_constraintBottom_toTopOf="@id/name">
+
+        <RadioButton
+            android:id="@+id/radioCustomer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/customer"
+            android:buttonTint="@color/purple_500"
+            android:textColor="@color/black"
+            android:layout_marginEnd="20dp"
+            />
+
+        <RadioButton
+            android:id="@+id/radioAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/admin"
+            android:buttonTint="@color/purple_500"
+            android:textColor="@color/black"
+            android:layout_marginStart="20dp"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="none"
+        android:background="@drawable/edit_background"
+        android:hint="@string/name"
+        android:includeFontPadding="false"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintBottom_toTopOf="@id/emailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+    <EditText
+        android:id="@+id/emailAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:autofillHints="none"
+        android:background="@drawable/edit_background"
+        android:hint="@string/email_address"
+        android:includeFontPadding="false"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintBottom_toTopOf="@id/password"
+        app:layout_constraintEnd_toEndOf="@id/name"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:autofillHints="none"
+        android:background="@drawable/edit_background"
+        android:hint="@string/password"
+        android:includeFontPadding="false"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintBottom_toTopOf="@id/button_signUp"
+        app:layout_constraintEnd_toEndOf="@id/emailAddress"
+        app:layout_constraintStart_toStartOf="@id/emailAddress"
+        app:layout_constraintTop_toBottomOf="@id/emailAddress" />
+
+    <TextView
+        android:id="@+id/button_signUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:padding="12dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background"
+        app:layout_constraintStart_toStartOf="@id/emailAddress"
+        app:layout_constraintEnd_toEndOf="@id/emailAddress"
+        app:layout_constraintTop_toBottomOf="@id/password"
+        app:layout_constraintBottom_toTopOf="@id/text_signIn"/>
+
+    <TextView
+        android:id="@+id/text_signIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/already_have_an_account"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:layout_marginBottom="150dp"
+        app:layout_constraintStart_toStartOf="@id/emailAddress"
+        app:layout_constraintEnd_toEndOf="@id/emailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
